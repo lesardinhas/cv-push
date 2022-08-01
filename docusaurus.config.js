@@ -56,7 +56,7 @@ const config = {
             label: 'Resume',
           },
           {
-            href: 'https://github.com/lesardinhas/outcloud-cv',
+            href: 'https://github.com/lesardinhas/cv-push',
             label: 'GitHub',
             position: 'right',
           },   
