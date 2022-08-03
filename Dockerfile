@@ -10,4 +10,6 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "serve"]
+#CMD ["yarn", "run", "serve"]
+
+CMD ["yarn", "start"]
