@@ -1,13 +1,9 @@
-FROM node:latest
-
+FROM node:lts as builder
 WORKDIR /app
-
-COPY package*.json ./
-
+COPY . /app
 RUN yarn install
+RUN yarn build
 
-COPY . .
-
-#CMD ["yarn", "run", "serve"]
-
-CMD ["yarn", "start"]
+FROM nginx:stable-alpine as deploy
+WORKDIR /app
+COPY --from=builder /app/build /usr/share/nginx/html/
