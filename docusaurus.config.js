@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Curriculum Vitae',
   tagline: 'João Gomes',
-  url: 'https://lesardinhas.github.io/cv-push/',
+  url: 'https://lesardinhas.github.io/',
   baseUrl: '/cv-push/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
