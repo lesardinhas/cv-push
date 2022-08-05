@@ -13,3 +13,5 @@ FROM nginx:stable-alpine as deploy
 WORKDIR /app
 
 COPY --from=builder /app/build /usr/share/nginx/html/
+
+CMD ["yarn", "start"]
