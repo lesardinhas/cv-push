@@ -10,9 +10,9 @@ RUN yarn build
 
 FROM nginx:stable-alpine as deploy
 
-WORKDIR /app
-
 RUN apk add yarn
+
+WORKDIR /app
 
 COPY --from=builder /app/build /usr/share/nginx/html/
 
