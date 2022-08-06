@@ -1,19 +1,13 @@
-FROM node:lts as builder
+FROM node:lts
 
 WORKDIR /app
 
-COPY . /app
+COPY package*.json .
 
 RUN yarn install
 
-RUN yarn build
+COPY . .
 
-FROM nginx:stable-alpine as deploy
+EXPOSE 3000
 
-RUN apk add yarn
-
-WORKDIR /app
-
-COPY --from=builder /app/build /usr/share/nginx/html/
-
-CMD ["yarn", "start"]
+CMD ["yarn", "run", "serve"]
